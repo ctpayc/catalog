@@ -1,0 +1,12 @@
+hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.catalog-list {
+	margin-bottom: 5px;
+	padding: 5px;
+	border-bottom: 1px solid #eeeeee;
+}
+.catalog-list:hover, .catalog-list:active, li.catalog-list.active {
+	background: #e6e6e6;
+}

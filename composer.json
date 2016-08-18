@@ -1,0 +1,25 @@
+{
+    "name": "liteweb/catalog",
+    "description": "Edit catalog for liteweb glavobmen.",
+    "keywords": ["laravel", "catalog", "json"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liteweb",
+            "email": "l1tewebstudio@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "database",
+            "packages/liteweb/catalog/src/database/migrations"
+        ],
+        "psr-4": {
+            "Liteweb\\Catalog\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "~5"
+    }
+
+}

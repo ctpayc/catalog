@@ -1,0 +1,534 @@
+{
+  "deal_types": {
+    "sell": {
+      "type": "deal_type",
+      "title": "Продать",
+      "name": "sell",
+      "main": {
+        "type": "group",
+        "title": "Основные параметры",
+        "_3": {
+          "param-id": 3,
+          "label": "Общая площадь",
+          "name": "total_space",
+          "type": "input",
+          "validate": "number",
+          "required": true,
+          "mes": "м²"
+        },
+        "_7": {
+          "param-id": 7,
+          "label": "Материал",
+          "name": "material",
+          "type": "select",
+          "validate": "notEqual",
+          "required": true,
+          "values": [
+            "&mdash;",
+            "Кирпич",
+            "Кирпич на каркасе",
+            "Бетон",
+            "Монолит",
+            "Брус",
+            "Цилиндр. пенобетон",
+            "Газобетон",
+            "Арболит",
+            "Сибит",
+            "Шлакоблоки",
+            "Другое"
+          ]
+        },
+        "_13": {
+          "param-id": 13,
+          "label": "Цена",
+          "name": "price",
+          "type": "input",
+          "required": true,
+          "mes": "руб."
+        },
+        "_15": {
+          "param-id": 15,
+          "label": "Форма собственности",
+          "name": "forma_sobsvennosti",
+          "type": "select",
+          "validate": "notEqual",
+          "required": false,
+          "values": [
+            "&mdash;",
+            "Частная",
+            "ДДУ",
+            "Инвестиционный договор",
+            "Кооператив.",
+            "Другое"
+          ]
+        },
+        "description": {
+          "label": "Описание",
+          "name": "description",
+          "type": "textarea",
+          "required": true
+        },
+        "images": {
+          "label": "Фотографии",
+          "name": "photos",
+          "type": "images",
+          "label_desc": "макс 10 фото",
+          "required": false
+        }
+      },
+      "address": {
+        "type": "group",
+        "title": "Адрес",
+        "crazy_address": {
+          "label": "Адрес",
+          "name": "crazy_address",
+          "type": "crazy_address",
+          "style": "col-md-6",
+          "required": true
+        },
+        "crazy_city": {
+          "label": "Город",
+          "name": "city",
+          "type": "crazy_city",
+          "style": "col-md-6",
+          "required": true
+        }
+      },
+      "extra": {
+        "type": "group",
+        "title": "Дополнительные параметры",
+        "cellar": {
+          "label": "Погреб",
+          "name": "cellar",
+          "type": "select",
+          "required": false,
+          "values": ["&mdash;","есть","нет"]
+        }
+      }
+    },
+    "buy": {
+      "type": "deal_type",
+      "title": "Купить",
+      "name": "buy",
+      "main": {
+        "type": "group",
+        "title": "Основные параметры",
+        "_3": {
+          "param-id": 3,
+          "label": "Общая площадь",
+          "name": "total_space",
+          "type": "input",
+          "validate": "number",
+          "required": true,
+          "mes": "м²"
+        },
+        "_7": {
+          "param-id": 7,
+          "label": "Материал",
+          "name": "material",
+          "type": "select",
+          "validate": "notEqual",
+          "required": true,
+          "values": [
+            "&mdash;",
+            "Кирпич",
+            "Кирпич на каркасе",
+            "Бетон",
+            "Монолит",
+            "Брус",
+            "Цилиндр. пенобетон",
+            "Газобетон",
+            "Арболит",
+            "Сибит",
+            "Шлакоблоки",
+            "Другое"
+          ]
+        },
+        "_13": {
+          "param-id": 13,
+          "label": "Цена",
+          "name": "price",
+          "type": "input",
+          "required": true,
+          "mes": "руб."
+        },
+        "_15": {
+          "param-id": 15,
+          "label": "Форма собственности",
+          "name": "forma_sobsvennosti",
+          "type": "select",
+          "validate": "notEqual",
+          "required": false,
+          "values": [
+            "&mdash;",
+            "Частная",
+            "ДДУ",
+            "Инвестиционный договор",
+            "Кооператив.",
+            "Другое"
+          ]
+        },
+        "description": {
+          "label": "Описание",
+          "name": "description",
+          "type": "textarea",
+          "required": true
+        },
+        "images": {
+          "label": "Фотографии",
+          "name": "photos",
+          "type": "images",
+          "label_desc": "макс 10 фото",
+          "required": false
+        }
+      },
+      "address": {
+        "type": "group",
+        "title": "Адрес",
+        "crazy_address": {
+          "label": "Адрес",
+          "name": "crazy_address",
+          "type": "crazy_address",
+          "style": "col-md-6",
+          "required": true
+        },
+        "crazy_city": {
+          "label": "Город",
+          "name": "city",
+          "type": "crazy_city",
+          "style": "col-md-6",
+          "required": true
+        }
+      },
+      "extra": {
+        "type": "group",
+        "title": "Дополнительные параметры",
+        "cellar": {
+          "label": "Погреб",
+          "name": "cellar",
+          "type": "select",
+          "required": false,
+          "values": ["&mdash;","есть","нет"]
+        }
+      }
+    },
+    "rent": {
+      "type": "deal_type",
+      "title": "Сдать",
+      "name": "rent",
+      "main": {
+        "type": "group",
+        "title": "Основные параметры",
+        "_3": {
+          "param-id": 3,
+          "label": "Общая площадь",
+          "name": "total_space",
+          "type": "input",
+          "validate": "number",
+          "required": true,
+          "mes": "м²"
+        },
+        "_7": {
+          "param-id": 7,
+          "label": "Материал",
+          "name": "material",
+          "type": "select",
+          "validate": "notEqual",
+          "required": true,
+          "values": [
+            "&mdash;",
+            "Кирпич",
+            "Кирпич на каркасе",
+            "Бетон",
+            "Монолит",
+            "Брус",
+            "Цилиндр. пенобетон",
+            "Газобетон",
+            "Арболит",
+            "Сибит",
+            "Шлакоблоки",
+            "Другое"
+          ]
+        },
+        "_13": {
+          "param-id": 13,
+          "label": "Цена",
+          "name": "price",
+          "type": "input",
+          "required": true,
+          "mes": "руб."
+        },
+        "_15": {
+          "param-id": 15,
+          "label": "Форма собственности",
+          "name": "forma_sobsvennosti",
+          "type": "select",
+          "validate": "notEqual",
+          "required": false,
+          "values": [
+            "&mdash;",
+            "Частная",
+            "ДДУ",
+            "Инвестиционный договор",
+            "Кооператив.",
+            "Другое"
+          ]
+        },
+        "description": {
+          "label": "Описание",
+          "name": "description",
+          "type": "textarea",
+          "required": true
+        },
+        "images": {
+          "label": "Фотографии",
+          "name": "photos",
+          "type": "images",
+          "label_desc": "макс 10 фото",
+          "required": false
+        }
+      },
+      "address": {
+        "type": "group",
+        "title": "Адрес",
+        "crazy_address": {
+          "label": "Адрес",
+          "name": "crazy_address",
+          "type": "crazy_address",
+          "style": "col-md-6",
+          "required": true
+        },
+        "crazy_city": {
+          "label": "Город",
+          "name": "city",
+          "type": "crazy_city",
+          "style": "col-md-6",
+          "required": true
+        }
+      },
+      "extra": {
+        "type": "group",
+        "title": "Дополнительные параметры",
+        "cellar": {
+          "label": "Погреб",
+          "name": "cellar",
+          "type": "select",
+          "required": false,
+          "values": ["&mdash;","есть","нет"]
+        }
+      }
+    },
+    "take": {
+      "type": "deal_type",
+      "title": "Снять",
+      "name": "take",
+      "main": {
+        "type": "group",
+        "title": "Основные параметры",
+        "_3": {
+          "param-id": 3,
+          "label": "Общая площадь",
+          "name": "total_space",
+          "type": "input",
+          "validate": "number",
+          "required": true,
+          "mes": "м²"
+        },
+        "_7": {
+          "param-id": 7,
+          "label": "Материал",
+          "name": "material",
+          "type": "select",
+          "validate": "notEqual",
+          "required": true,
+          "values": [
+            "&mdash;",
+            "Кирпич",
+            "Кирпич на каркасе",
+            "Бетон",
+            "Монолит",
+            "Брус",
+            "Цилиндр. пенобетон",
+            "Газобетон",
+            "Арболит",
+            "Сибит",
+            "Шлакоблоки",
+            "Другое"
+          ]
+        },
+        "_13": {
+          "param-id": 13,
+          "label": "Цена",
+          "name": "price",
+          "type": "input",
+          "required": true,
+          "mes": "руб."
+        },
+        "_15": {
+          "param-id": 15,
+          "label": "Форма собственности",
+          "name": "forma_sobsvennosti",
+          "type": "select",
+          "validate": "notEqual",
+          "required": false,
+          "values": [
+            "&mdash;",
+            "Частная",
+            "ДДУ",
+            "Инвестиционный договор",
+            "Кооператив.",
+            "Другое"
+          ]
+        },
+        "description": {
+          "label": "Описание",
+          "name": "description",
+          "type": "textarea",
+          "required": true
+        },
+        "images": {
+          "label": "Фотографии",
+          "name": "photos",
+          "type": "images",
+          "label_desc": "макс 10 фото",
+          "required": false
+        }
+      },
+      "address": {
+        "type": "group",
+        "title": "Адрес",
+        "crazy_address": {
+          "label": "Адрес",
+          "name": "crazy_address",
+          "type": "crazy_address",
+          "style": "col-md-6",
+          "required": true
+        },
+        "crazy_city": {
+          "label": "Город",
+          "name": "city",
+          "type": "crazy_city",
+          "style": "col-md-6",
+          "required": true
+        }
+      },
+      "extra": {
+        "type": "group",
+        "title": "Дополнительные параметры",
+        "cellar": {
+          "label": "Погреб",
+          "name": "cellar",
+          "type": "select",
+          "required": false,
+          "values": ["&mdash;","есть","нет"]
+        }
+      }
+    },
+    "change": {
+      "type": "deal_type",
+      "title": "Поменять",
+      "name": "change",
+      "main": {
+        "type": "group",
+        "title": "Основные параметры",
+        "_3": {
+          "param-id": 3,
+          "label": "Общая площадь",
+          "name": "total_space",
+          "type": "input",
+          "validate": "number",
+          "required": true,
+          "mes": "м²"
+        },
+        "_7": {
+          "param-id": 7,
+          "label": "Материал",
+          "name": "material",
+          "type": "select",
+          "validate": "notEqual",
+          "required": true,
+          "values": [
+            "&mdash;",
+            "Кирпич",
+            "Кирпич на каркасе",
+            "Бетон",
+            "Монолит",
+            "Брус",
+            "Цилиндр. пенобетон",
+            "Газобетон",
+            "Арболит",
+            "Сибит",
+            "Шлакоблоки",
+            "Другое"
+          ]
+        },
+        "_13": {
+          "param-id": 13,
+          "label": "Цена",
+          "name": "price",
+          "type": "input",
+          "required": true,
+          "mes": "руб."
+        },
+        "_15": {
+          "param-id": 15,
+          "label": "Форма собственности",
+          "name": "forma_sobsvennosti",
+          "type": "select",
+          "validate": "notEqual",
+          "required": false,
+          "values": [
+            "&mdash;",
+            "Частная",
+            "ДДУ",
+            "Инвестиционный договор",
+            "Кооператив.",
+            "Другое"
+          ]
+        },
+        "description": {
+          "label": "Описание",
+          "name": "description",
+          "type": "textarea",
+          "required": true
+        },
+        "images": {
+          "label": "Фотографии",
+          "name": "photos",
+          "type": "images",
+          "label_desc": "макс 10 фото",
+          "required": false
+        }
+      },
+      "address": {
+        "type": "group",
+        "title": "Адрес",
+        "crazy_address": {
+          "label": "Адрес",
+          "name": "crazy_address",
+          "type": "crazy_address",
+          "style": "col-md-6",
+          "required": true
+        },
+        "crazy_city": {
+          "label": "Город",
+          "name": "city",
+          "type": "crazy_city",
+          "style": "col-md-6",
+          "required": true
+        }
+      },
+      "extra": {
+        "type": "group",
+        "title": "Дополнительные параметры",
+        "cellar": {
+          "label": "Погреб",
+          "name": "cellar",
+          "type": "select",
+          "required": false,
+          "values": ["&mdash;","есть","нет"]
+        }
+      }
+    }
+  }
+}
